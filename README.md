@@ -34,6 +34,8 @@ Models:
 5. Profile: User profile information including image, bio, qualifications, and job title.
 6. Profilehr: HR profile information including image, phone number, company name, country, address, bio, and about.
 7. MyApplyJobList: Records jobs applied to by candidates.
+
+
 Views:
 1. JobPostListView: Displays a list of available jobs.
 2. applyJob: Handles job applications.
