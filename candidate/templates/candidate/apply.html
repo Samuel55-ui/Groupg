@@ -112,6 +112,22 @@
 .apply-form button:hover {
   background-color: #2980b9;
 }
+@media only screen and (max-width: 768px) {
+  body{
+    background-color: white;
+  }
+  .container{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .apply-form{
+    box-shadow: none;
+  }
+  .content{
+    margin: 0;
+  }
+}
+
 
   </style>
 </head>
@@ -133,10 +149,10 @@
           <input type="text" id="college" name="college" required>
           
           <label for="passing-year">Passing Year:</label>
-          <input type="text" id="passing-year" name="passing_year" required>
+          <input type="number" id="passing-year" name="passing_year" required>
 
           <label for="passing-year">Year Experience:</label>
-          <input type="text" id="passing-year" name="yearOfExperience" required>
+          <input type="number" id="passing-year" name="yearOfExperience" required>
           
           <label for="resume">Resume:</label>
           <input type="file" id="resume" name="resume" name="resume" accept=".pdf,.doc,.docx" required>
