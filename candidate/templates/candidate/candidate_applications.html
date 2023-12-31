@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 4rem;
+  width: 50rem; 
+
+}
+
+.sidebar {
+  background-color: #34495e;
+  color: white;
+  width: 220px;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+
+/* ... Existing job card styles ... */
+
+.logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+
+
+.content-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profile-img{
+    width: 150px;
+    border-radius: 50%;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.sidebar i {
+  margin-right: 10px;
+}
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      {% include 'candidate/navbar.html' %}
+  </div>
+  <div class="content-section">
+      {% block content %}
+          <h2>Your Applications</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Job Title</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for application in applications %}
+                      <tr>
+                          <td>{{ application.job.title }}</td>
+                          <td>{{ application.status }}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+      {% endblock %}
+  </div>
+</body>
+</body>
+</html>

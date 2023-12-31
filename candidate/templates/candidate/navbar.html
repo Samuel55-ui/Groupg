@@ -1,0 +1,138 @@
+<style>
+    .nav-toggle{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin-left: 85%;
+    border: none;
+    background-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.sidebar{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    transform: translate(-100%);
+    transition: transform 1s ease-in-out;
+    z-index: 2;
+}
+.show-sidebar{
+    transform: translate(0);
+}
+.sidebar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.logo{
+    width: 3.7rem;
+    cursor: pointer;
+}
+.close{
+    cursor: pointer;
+}
+li{
+    list-style: none;
+    padding: 20px 0;
+    font-size: 1.3rem;
+}
+li a {
+    text-decoration: none;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 10%;
+    padding: 0;
+    padding-left: 20px;
+    margin-bottom: 15%;
+}
+.links li a {
+    color: black;
+}
+.links li {
+    cursor: pointer;
+    transition: padding 0.5s ease-in-out;
+}
+.links li:hover{
+    background-color: rgba(77, 190, 255, 0.938);
+    padding-left: 30px;
+}
+.logout-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+.logout-button a {
+  text-decoration: none;
+  color: white;
+}
+@media screen and (min-width:640px) {
+    .sidebar{
+        width: 400px;
+    }
+    .nav-toggle{
+        margin-left: 94%;
+    }
+    .links{
+        margin-bottom: 35%;
+    }
+}
+</style>
+<button class="nav-toggle">
+  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="30" viewBox="0,0,256,256">
+      <g fill="#fffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,9v2h50v-2zM0,24v2h50v-2zM0,39v2h50v-2z"></path></g></g>
+      </svg>
+</button>
+<aside class="sidebar">
+  <div class="sidebar-header">
+      <img src="opus2.jpeg" alt="" class="logo">
+      <buttton class="close">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="60" height="30" viewBox="0 0 50 50">
+              <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+              </svg>
+      </buttton>
+  </div>
+  <ul class="links">
+    <li><a href="{% url 'profile' %}"><i class="fas fa-user"></i> Profile</a></li>
+    <li><a href="{% url 'dash' %}"><i class="fas fa-list"></i> Available Jobs</a></li>
+    <li><a href="{% url 'candidate_applications' %}"><i class="fas fa-plus-circle"></i> Your Applications</a></li>
+  </ul>
+ 
+  <button class="logout-button"><a href="{% url 'logout' %}"><i class="fas fa-sign-out"></i>Logout</a></button>
+</aside>
+
+<script>
+  const toggleBtn = document.querySelector
+('.nav-toggle');
+const sidebar = document.querySelector('.sidebar');
+const closeBtn = document.querySelector('.close');
+
+//toggle buttons
+toggleBtn.addEventListener('click', function(){
+    sidebar.classList.toggle('show-sidebar')
+});
+//close button
+closeBtn.addEventListener('click', function(){
+    sidebar.classList.toggle('show-sidebar')
+})
+</script>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  min-height: 100vh;
+}
+
+.logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.content-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img{
+    width: 150px;
+    border-radius: 50%;
+}
+.editBtn{
+  display: block;
+  width: 96%;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        {% include 'candidate/navbar.html' %}
+    </div>
+    {% block content %}
+
+    {% if user.is_authenticated %}
+    <div class="content-section">
+        <div class="media">
+            <img class="profile-img" src="{{user.profile.image.url}}" alt="">
+        </div>
+        <div class="media-body">
+            <h2>Username: {{ user.username }}</h2>
+            <p>Email: {{user.email}}</p>
+            <p>Phone Number: {{ user.profile.phone_number }}</p>
+            <p>First Name: {{ user.profile.first_name }}</p>
+            <p>Last Name: {{ user.profile.last_name }}</p>
+            <p>Sex: {{ user.profile.sex }}</p>
+            <p>Country: {{ user.profile.country }}</p>
+            <p>Address: {{ user.profile.address }}</p>
+            <p>Bio: {{ user.profile.bio }}</p>
+            <p>Qualifications: {{ user.profile.qualifications }}</p>
+            <p>Job Title: {{ user.profile.job_title }}</p>
+
+            <!-- Add the button to navigate to the edit profile page -->
+            <a href="{% url 'edit_profile' %}" class="editBtn">Edit Profile</a>
+        </div>
+    </div>
+    
+
+    {% else %}
+    <p>Login to view your details</p>
+
+    {% endif %}
+    {% endblock %}
+
+</body>
+</html>

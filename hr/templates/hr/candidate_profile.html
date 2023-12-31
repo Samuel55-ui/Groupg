@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ candidate_user.username }}'s Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  min-height: 100vh;
+}
+
+.logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+.content-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        {% include 'hr/navbar.html' %}
+    </div>
+    <div class="content-section">
+      <h1>{{ candidate_user.username }}'s Profile</h1>
+      <div class="media">
+        <img class="profile-img" src="{{candidate_user.profile.image.url}}" alt="">
+      </div>
+      <div class="media-body">
+        <h2>Username: {{ candidate_user.username }}</h2>
+        <p>Email: {{candidate_user.email}}</p>
+        <p>Phone Number: {{ candidate_user.profile.phone_number }}</p>
+        <p>First Name: {{ candidate_user.profile.first_name }}</p>
+        <p>Last Name: {{ candidate_user.profile.last_name }}</p>
+        <p>Sex: {{ candidate_user.profile.sex }}</p>
+        <p>Country: {{ candidate_user.profile.country }}</p>
+        <p>Address: {{ candidate_user.profile.address }}</p>
+        <p>Bio: {{ candidate_user.profile.bio }}</p>
+        <p>Qualifications: {{ candidate_user.profile.qualifications }}</p>
+        <p>Job Title: {{ candidate_user.profile.job_title }}</p>
+      </div>
+    </div>
+</body>
+</html>
