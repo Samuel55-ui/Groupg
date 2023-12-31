@@ -55,17 +55,7 @@ HTML templates for rendering user interfaces.
 Contribution
 Contribution was mainly in groups in our group we split our selves in groups to be able to get things done faster as it was a different group that coded that handled documentation in order for everone to be useful we enforced that behaviour.
 
-License
-This project is open-source and licensed under the MIT License, encouraging collaboration and adaptation for various purposes.
 
-Table of Contents
-•Installation
-•Usage
-•Features
-•Contributing
-•License
-•Testing
-•Acknowledgments
 Installation
 # Clone the repository
 git clone https://github.com/zealizu/jobapp.git
