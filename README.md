@@ -27,25 +27,25 @@ SYSTEM ARCHITECTURE
 The system follows a standard Django architecture, including models, views, templates, and static files. Key components include:
 
 Models:
-•	JobPost: Represents a job listing.
-•	CandidateApplications: Represents applications submitted by candidates.
-•	SelectCandidateJob: Links selected candidates to specific jobs.
-•	IsSortList: Records the date a user applied for a job.
-•	Profile: User profile information including image, bio, qualifications, and job title.
-•	Profilehr: HR profile information including image, phone number, company name, country, address, bio, and about.
-•	MyApplyJobList: Records jobs applied to by candidates.
+1. JobPost: Represents a job listing.
+2. CandidateApplications: Represents applications submitted by candidates.
+3. SelectCandidateJob: Links selected candidates to specific jobs.
+4. IsSortList: Records the date a user applied for a job.
+5. Profile: User profile information including image, bio, qualifications, and job title.
+6. Profilehr: HR profile information including image, phone number, company name, country, address, bio, and about.
+7. MyApplyJobList: Records jobs applied to by candidates.
 Views:
-•	JobPostListView: Displays a list of available jobs.
-•	applyJob: Handles job applications.
-•	hrdash: HR dashboard for managing job applications.
-•	acceptApplication and reject_application: Accepts or rejects job applications.
-•	edit_profile: Allows users to edit their profiles.
-•	edit_profilehr: Allows HR users to edit their profiles.
-•	candidateHome: Displays the candidate dashboard.
-•	myjoblist: Displays a list of jobs applied to by a candidate.
-•	profilepage: Displays the candidate's profile.
-•	edit_profile: Allows candidates to edit their profiles.
-•	candidate_applications: Displays a list of job applications submitted by the candidate.
+1. JobPostListView: Displays a list of available jobs.
+2. applyJob: Handles job applications.
+3. hrdash: HR dashboard for managing job applications.
+4. acceptApplication and reject_application: Accepts or rejects job applications.
+5. edit_profile: Allows users to edit their profiles.
+6. edit_profilehr: Allows HR users to edit their profiles.
+7. candidateHome: Displays the candidate dashboard.
+8. myjoblist: Displays a list of jobs applied to by a candidate.
+9. profilepage: Displays the candidate's profile.
+10. edit_profile: Allows candidates to edit their profiles.
+11. candidate_applications: Displays a list of job applications submitted by the candidate.
 Templates:
 HTML templates for rendering user interfaces.
 
@@ -95,16 +95,7 @@ Create your feature branch (git checkout -b feature/YourFeature).
 Commit your changes (git commit -m 'Added some features').
 Push to the branch (git push -u origin feature/YourFeature).
 Open a pull request.
-License
-Specify the license under which your eCommerce web app is distributed.
-
-This project is licensed under the MIT License.
 
 Testing
 testing was done by users manually we had a group who searched for bugs manually it was slow but it worked.
 
-Documentation
-Documentation will be readily available soon
-
-Acknowledgments
-We thank Djandgo for the ability to create an application so easily we are also grateful for the middleware used for authentication
